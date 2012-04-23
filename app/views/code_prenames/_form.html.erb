@@ -1,0 +1,10 @@
+<%= simple_form_for @code_prename, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :code %>
+  <%= f.input :name %>
+  <%= f.input :use, :as => :radio, :collection => [true,false] %>
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                code_prenames_path, :class => 'btn' %>
+  </div>
+<% end %>

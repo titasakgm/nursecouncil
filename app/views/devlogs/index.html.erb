@@ -1,0 +1,34 @@
+<%- model_class = Devlog.new.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human.pluralize %></h1>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th width="30%"><%= model_class.human_attribute_name(:request) %></th>
+      <th width="30%"><%= model_class.human_attribute_name(:fixing) %></th>
+      <th width="20%"><%= model_class.human_attribute_name(:url) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @devlogs.each do |devlog| %>
+      <tr>
+        <td><%= devlog.request %></td>
+        <td><%= devlog.fixing %></td>
+        <td><%= devlog.url %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_devlog_path(devlog), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      devlog_path(devlog),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_devlog_path,
+            :class => 'btn btn-primary' %>

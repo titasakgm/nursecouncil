@@ -1,0 +1,4 @@
+<%- model_class = @code_province.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                 :default => "เพิ่ม/แก้ไขรหัสจังหวัด") %></h1>
+<%= render :partial => 'form' %>

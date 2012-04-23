@@ -1,0 +1,23 @@
+<%- model_class = @code_province.class -%>
+<h1><%=t '.title', :default => "รหัสจังหวัด" %></h1>
+
+<p>
+  <strong><%= model_class.human_attribute_name(:code) %>:</strong><br>
+  <%= @code_province.code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+  <%= @code_province.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              code_provinces_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_code_province_path(@code_province), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              code_province_path(@code_province),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

@@ -1,0 +1,4 @@
+<%- model_class = @code_prename.class -%>
+<h1><%=t '.title', :default => t('helpers.titles.edit', :model => model_class.model_name.human,
+                                 :default => "เพิ่ม/แก้ไขรหัสคำนำหน้าชื่อ (ทั้งภาษาไทย & ภาษาอังกฤษ)") %></h1>
+<%= render :partial => 'form' %>
