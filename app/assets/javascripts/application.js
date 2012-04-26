@@ -8,3 +8,19 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require_tree .
+
+$(function() {
+  $('#search input').keypress(function(e){
+    if(e.which == 13){
+      var q = $('#q').val();
+      var href = $(location).attr("href")
+      if (href.indexOf('/search/') != -1)
+        href = href.split('/search/')[0];
+      else if (href.indexOf('?') != -1)
+        href = href.split('?')[0];
+      var req = href + '/search/' + q;
+      window.location = req;
+      return false;
+    }
+  });
+});

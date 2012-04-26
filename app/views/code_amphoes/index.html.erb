@@ -1,0 +1,36 @@
+<%- model_class = CodeAmphoe.new.class -%>
+<h1><%=t '.title', :default => "รหัสอำเภอ" %></h1>
+<%= paginate @code_amphoes %>
+<p>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:province) %></th>
+      <th><%= model_class.human_attribute_name(:code) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @code_amphoes.each do |code_amphoe| %>
+      <tr>
+        <td><%= code_amphoe.code.to_s[0..1] %>: <%= code_amphoe.province %></td>
+        <td><%= code_amphoe.code %></td>
+        <td><%= code_amphoe.name %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_code_ampho_path(code_amphoe), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      code_ampho_path(code_amphoe),
+                      :method => :delete,
+                      :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+                      :class => 'btn btn-mini btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_code_ampho_path,
+            :class => 'btn btn-primary' %>

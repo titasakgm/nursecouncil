@@ -35,8 +35,15 @@
               <%= link_to "รหัสคำนำหน้าชื่อ", code_prenames_path %>
               <li class="divider"></li>
               <%= link_to "รหัสจังหวัด", code_provinces_path %>
+              <%= link_to "รหัสอำเภอ", code_amphoes_path %>
+              <%= link_to "รหัสตำบล", code_tambons_path %>              
             </ul>
           </li>
+          <li class="divider-vertical"></li>
+          <form class="navbar-search" id="search">
+            <input type="text" id="q" class="search-query span3"
+             placeholder="Search" values="<%= params[:q] %>">
+          </form>          
         </ul>
       </div>
     </div>

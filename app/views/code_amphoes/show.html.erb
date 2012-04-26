@@ -1,0 +1,26 @@
+<%- model_class = @code_amphoe.class -%>
+<h1><%=t '.title', :default => model_class.model_name.human %></h1>
+<p>
+  <strong><%= model_class.human_attribute_name(:code_province_id) %>:</strong><br>
+  <%= @code_amphoe.province %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:code) %>:</strong><br>
+  <%= @code_amphoe.code %>
+</p>
+<p>
+  <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
+  <%= @code_amphoe.name %>
+</p>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.back")),
+              code_amphoes_path, :class => 'btn'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_code_ampho_path(@code_amphoe), :class => 'btn' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              code_ampho_path(@code_amphoe),
+              :method => 'delete',
+              :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')),
+              :class => 'btn btn-danger' %>
+</div>

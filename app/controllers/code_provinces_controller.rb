@@ -83,4 +83,9 @@ class CodeProvincesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def search
+    @code_provinces = CodeProvince.where("(this.code + this.name).indexOf('#{params[:q]}') != -1").page(params[:page])
+    render 'index'
+  end
 end

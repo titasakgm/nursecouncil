@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  code_amphoe_id: 1
+  code: MyString
+  name: MyString
+
+two:
+  code_amphoe_id: 1
+  code: MyString
+  name: MyString

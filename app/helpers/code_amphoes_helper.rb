@@ -1,0 +1,2 @@
+module CodeAmphoesHelper
+end

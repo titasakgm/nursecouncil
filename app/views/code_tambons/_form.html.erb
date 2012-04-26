@@ -1,0 +1,14 @@
+<%= simple_form_for(@code_tambon) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :province %>
+    <%= f.input :amphoe %>
+    <%= f.input :code %>
+    <%= f.input :name %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                code_tambons_path, :class => 'btn' %>
+  </div>
+<% end %>

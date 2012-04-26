@@ -83,4 +83,9 @@ class CodePrenamesController < ApplicationController
       format.json { head :ok }
     end
   end
+
+  def search
+    @code_prenames = CodePrename.where("(this.code + this.name).indexOf('#{params[:q]}') != -1").page(params[:page])
+    render 'index'
+  end   
 end

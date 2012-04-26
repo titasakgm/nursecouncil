@@ -1,0 +1,2 @@
+module CodeTambonsHelper
+end

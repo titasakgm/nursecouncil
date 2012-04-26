@@ -16,4 +16,3 @@ gem 'kaminari'
 gem 'simple_form'
 gem 'tabs_on_rails'
 gem 'mongrel'
-
