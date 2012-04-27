@@ -12,7 +12,7 @@
 $(function() {
   $('#search input').keypress(function(e){
     if(e.which == 13){
-      var q = $('#q').val();
+      var q = $('#q').val().replace(/\./g,'');
       var href = $(location).attr("href")
       if (href.indexOf('/search/') != -1)
         href = href.split('/search/')[0];

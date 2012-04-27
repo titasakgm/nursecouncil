@@ -16,6 +16,10 @@
   <strong><%= model_class.human_attribute_name(:name) %>:</strong><br>
   <%= @code_tambon.name %>
 </p>
+<p>
+  <strong><%= model_class.human_attribute_name(:zip) %>:</strong><br>
+  <%= @code_tambon.zip %>
+</p>
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

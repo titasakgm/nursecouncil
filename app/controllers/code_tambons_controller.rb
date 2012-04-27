@@ -13,7 +13,6 @@ class CodeTambonsController < ApplicationController
   # GET /code_tambons/1
   # GET /code_tambons/1.json
   def show
-    render :text => params[:id]
     @code_tambon = CodeTambon.find(params[:id])
 
     respond_to do |format|
@@ -83,7 +82,7 @@ class CodeTambonsController < ApplicationController
   end
   
   def search
-    @code_tambons = CodeTambon.where("(this.province + this.amphoe + this.code + this.name).indexOf('#{params[:q]}') != -1").page(params[:page])
+    @code_tambons = CodeTambon.where("(this.province + this.amphoe + this.code + this.name + this.zip).indexOf('#{params[:q]}') != -1").page(params[:page])
     render 'index'
   end   
 end

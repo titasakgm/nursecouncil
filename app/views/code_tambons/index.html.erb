@@ -9,6 +9,7 @@
       <th><%= model_class.human_attribute_name(:amphoe) %></th>
       <th><%= model_class.human_attribute_name(:code) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:zip) %></th>      
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
   </thead>
@@ -19,6 +20,7 @@
         <td><%= code_tambon.code.to_s[0..3] %>: <%= code_tambon.amphoe %></td>
         <td><%= code_tambon.code %></td>
         <td><%= code_tambon.name %></td>
+        <td><%= code_tambon.zip %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_code_tambon_path(code_tambon),
